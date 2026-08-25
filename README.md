@@ -4,7 +4,7 @@
 
 ## Sobre o projeto
 
-O CineDiário nasceu da vontade de ter um lugar simples para organizar a relação com os filmes que a gente assiste. A ideia é inspirada em apps de catalogação de filmes (como o Letterboxd), mas com uma proposta mais enxuta e pensada para quem só quer registrar rapidamente o que viu, sem tantas funções extras.
+O Cinefilia nasceu da vontade de ter um lugar simples para organizar a relação com os filmes que a gente assiste. A ideia é inspirada em apps de catalogação de filmes (como o Letterboxd), mas com uma proposta mais enxuta e pensada para quem só quer registrar rapidamente o que viu, sem tantas funções extras.
 
 A proposta é permitir que o usuário monte, aos poucos, um histórico pessoal de tudo que assistiu: quando viu, que nota deu e o que achou. Com o tempo, esse histórico vira uma espécie de "diário de cinema", onde é possível olhar pra trás e lembrar de filmes, resenhas e sensações de meses ou anos atrás.
 
