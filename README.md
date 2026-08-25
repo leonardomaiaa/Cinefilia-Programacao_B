@@ -10,7 +10,7 @@ A proposta é permitir que o usuário monte, aos poucos, um histórico pessoal d
 
 O projeto terá duas frentes: um frontend **Web**, pensado para quem quer navegar pelo histórico com calma e escrever resenhas mais elaboradas, e um app **Mobile**, feito para o momento logo após assistir a um filme, quando a vontade de registrar a nota e as primeiras impressões ainda está fresca.
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - [ ] Cadastro e login de usuário
 - [ ] Cadastrar um filme assistido (nome, data e nota)
@@ -18,4 +18,4 @@ O projeto terá duas frentes: um frontend **Web**, pensado para quem quer navega
 - [ ] Ver histórico de filmes assistidos
 - [ ] Criar listas de filmes (ex: "quero assistir", "favoritos")
 - [ ] Perfil do usuário com o histórico de filmes e nota média
-- [ ] 
+
