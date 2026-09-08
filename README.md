@@ -12,10 +12,10 @@ O projeto terá duas frentes: um frontend **Web**, pensado para quem quer navega
 
 ## Funcionalidades
 
-- [ ] Cadastro e login de usuário
-- [ ] Cadastrar um filme assistido (nome, data e nota)
-- [ ] Escrever uma resenha/comentário sobre o filme
-- [ ] Ver histórico de filmes assistidos
-- [ ] Criar listas de filmes (ex: "quero assistir", "favoritos")
-- [ ] Perfil do usuário com o histórico de filmes e nota média
+-  Cadastro e login de usuário
+-  Cadastrar um filme assistido (nome, data e nota)
+-  Escrever uma resenha/comentário sobre o filme
+-  Ver histórico de filmes assistidos
+-  Criar listas de filmes (ex: "quero assistir", "favoritos")
+-  Perfil do usuário com o histórico de filmes e nota média
 

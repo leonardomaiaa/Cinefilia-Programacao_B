@@ -4,11 +4,7 @@
 
 2. Sim:
 - 000_erase: reseta o banco de dados.
-- 001_create_users: cria a tabela de usuários, com id (chave serial), nome, email, senha (hash) e data de criação.
-- 002_create_movies: cria a tabela de filmes, com id (chave serial), id do TMDB, título, ano de lançamento e URL do pôster.
-- 003_create_reviews: cria a tabela de resenhas, com id (chave serial), nota, texto e data assistida, além das colunas com o id do usuário e o id do filme (chaves estrangeiras).
-- 004_create_lists: cria a tabela de listas, com id (chave serial), nome, descrição e data de criação, além da coluna com o id do usuário (chave estrangeira).
-- 005_create_list_items: cria a tabela de itens de lista, com id (chave serial) e posição, além das colunas com o id da lista e o id do filme (chaves estrangeiras).
+- 001_initial_schema: cria todas as tabelas iniciais de uma vez (users, movies, reviews, lists, list_items), já que todas foram definidas antes de o projeto começar e não representam mudanças incrementais no schema.
 
 3. /workspaces/Cinefilia/backend/seed.sql
 
