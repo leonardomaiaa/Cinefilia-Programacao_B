@@ -8,10 +8,11 @@ CREATE TABLE users (
 
 CREATE TABLE movies (
     id SERIAL PRIMARY KEY,
-    tmdb_id INTEGER,
+    tmdb_id INTEGER UNIQUE,
     title VARCHAR(255) NOT NULL,
     release_year INTEGER,
-    poster_url VARCHAR(500)
+    poster_url VARCHAR(500),
+    created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE TABLE reviews (
