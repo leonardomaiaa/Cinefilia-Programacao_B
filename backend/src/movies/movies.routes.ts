@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { authenticateToken } from "../middlewares/auth.middleware";
 import * as moviesController from "./movies.controller";
 const router = Router();
 
@@ -97,7 +98,7 @@ router.get("/api/movies/:id", moviesController.getById);
  *         description: Filme já existe dentro na API(tmdb_id já está na API)
  */
 
-router.post("/api/movies", moviesController.create);
+router.post("/api/movies", authenticateToken, moviesController.create);
 
 /**
  * @swagger
@@ -154,7 +155,7 @@ router.post("/api/movies", moviesController.create);
  *         description: ID não existe no banco de dados
  */
 
-router.put("/api/movies/:id", moviesController.change);
+router.put("/api/movies/:id", authenticateToken, moviesController.change);
 
 /**
  * @swagger
@@ -190,12 +191,6 @@ router.put("/api/movies/:id", moviesController.change);
  *         description: ID não existe no banco de dados
  */
 
-router.delete("/api/movies/:id", moviesController.remove);
+router.delete("/api/movies/:id", authenticateToken, moviesController.remove);
 export default router;
-
-
-
-
-
-
 
