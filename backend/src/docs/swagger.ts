@@ -1,25 +1,37 @@
 import swaggerJSDoc, { Options } from "swagger-jsdoc";
+import { globSync } from "glob";
+
+const routesFiles = globSync("./src/**/*.routes.ts", { posix: true });
+const controllerFiles = globSync("./src/**/*.controller.ts", { posix: true });
+
+const apiPaths = [...routesFiles, ...controllerFiles];
 
 const swaggerOptions: Options = {
-    definition: {
-        openapi: "3.1.0",
+    definition: { 
+        openapi: "3.0.3",
         info: {
-            title: "API dp Cinefilia",
+            title: "API do Cinefilia",
             version: "0.3.0",
             description: "Documentação da API de backloggd-like Cinefilia",
         },
         servers: [
             {
-                url:"http://localhost:3000",
+                url: "http://localhost:3000",
                 description: "Servidor Local",
             },
         ],
+        components: {
+            securitySchemes: {
+                bearerAuth: {
+                    type: "http",
+                    scheme: "bearer",
+                    bearerFormat: "JWT",
+                    description: "Coloque o token",
+                },
+            },
+        },
     },
-apis: [
-    "./src/**/*.routes.ts",
-    "./src/**/*.controller.ts"
-],
+    apis: apiPaths, 
 };
 
-export const swaggerSpec = swaggerJSDoc(swaggerOptions)
-
+export const swaggerSpec = swaggerJSDoc(swaggerOptions);
