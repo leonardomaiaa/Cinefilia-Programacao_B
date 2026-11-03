@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { authenticateToken } from "../middlewares/auth.middleware";
 import * as moviesController from "./movies.controller";
+
 const router = Router();
 
 /**
@@ -13,7 +14,6 @@ const router = Router();
  *     responses:
  *       200:
  *         description: Lista de filmes retornada com sucesso
- *       
  *         content:
  *           application/json:
  *             schema:
@@ -21,7 +21,6 @@ const router = Router();
  *               items:
  *                 $ref: '#/components/schemas/Movie'
  */
-
 router.get("/api/movies", moviesController.getAll);
 
 /**
@@ -50,9 +49,7 @@ router.get("/api/movies", moviesController.getAll);
  *       404:
  *         description: ID não existe no banco de dados
  */
-
 router.get("/api/movies/:id", moviesController.getById);
-
 
 /**
  * @swagger
@@ -61,6 +58,8 @@ router.get("/api/movies/:id", moviesController.getById);
  *     summary: Adiciona um filme no banco de dados
  *     tags:
  *       - Movies
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -94,10 +93,11 @@ router.get("/api/movies/:id", moviesController.getById);
  *               $ref: '#/components/schemas/Movie'
  *       400:
  *         description: Campos obrigatórios ausentes ou inválidos
+ *       401:
+ *         description: Token não informado ou inválido
  *       409:
- *         description: Filme já existe dentro na API(tmdb_id já está na API)
+ *         description: Filme já existe dentro na API (tmdb_id já está na API)
  */
-
 router.post("/api/movies", authenticateToken, moviesController.create);
 
 /**
@@ -107,6 +107,8 @@ router.post("/api/movies", authenticateToken, moviesController.create);
  *     summary: Altera as informações de um filme existente
  *     tags:
  *       - Movies
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -151,10 +153,11 @@ router.post("/api/movies", authenticateToken, moviesController.create);
  *                   example: Informações do filme alteradas com sucesso
  *       400:
  *         description: ID do filme inválido ou campos obrigatórios ausentes
+ *       401:
+ *         description: Token não informado ou inválido
  *       404:
  *         description: ID não existe no banco de dados
  */
-
 router.put("/api/movies/:id", authenticateToken, moviesController.change);
 
 /**
@@ -164,6 +167,8 @@ router.put("/api/movies/:id", authenticateToken, moviesController.change);
  *     summary: Remove um filme do banco de dados
  *     tags:
  *       - Movies
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -187,10 +192,11 @@ router.put("/api/movies/:id", authenticateToken, moviesController.change);
  *                   example: 550
  *       400:
  *         description: ID do filme inválido. Deve ser um número
+ *       401:
+ *         description: Token não informado ou inválido
  *       404:
  *         description: ID não existe no banco de dados
  */
-
 router.delete("/api/movies/:id", authenticateToken, moviesController.remove);
-export default router;
 
+export default router;
